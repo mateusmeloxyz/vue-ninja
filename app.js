@@ -2,11 +2,13 @@ new Vue({
     el: '#vue-app',
     data: {
         name: '',
-        age: '',
+        age: 20,
         x: 0,
-        y: 0
+        y: 0,
+        a: 0,
+        b: 0
     },
-    methods: {
+    methods: {/*
         add: function(val){
             this.age+=val;
         },
@@ -22,6 +24,22 @@ new Vue({
         },
         logAge: function(){
             console.log("You entered your age");
-        }   
+        },
+        add: function(val){
+            console.log('executed for ' + val);
+            return this.age + val;
+        },*/
+    },
+    // when used computed the function will only run
+    // if it's dependencies change
+    computed: {
+        addToA: function(){
+            console.log('executed for A' );
+            return this.age + this.a;
+        },
+        addToB: function(){
+            console.log('executed for B' );
+            return this.age + this.b;
+        }
     }
 });

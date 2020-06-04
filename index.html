@@ -10,12 +10,13 @@
 <body>
     <div id="vue-app">
         <h1>Events</h1>
-        <button v-on:click="add(1)">+</button> <!--You can also use @click instead of v-on:click-->
-        <button v-on:click="add(-1)">-</button>
+        <button v-on:click.once="add(1)">+</button> <!--.once is makes the function be executed only once-->
+        <button v-on:click="add(-1)">-</button> <!--You can also use @click instead of v-on:click-->
         <button v-on:dblclick="add(10)">++</button>
         <button v-on:dblclick="add(-10)">--</button>
         <p>My age is {{ age }}</p>
         <div id="canvas" v-on:mousemove="updateXY">{{ x }}, {{ y }} </div>
+        <a v-on:click.prevent="alert" href="https://www.thenetninja.co.uk"></a> <!--prevent is an event modifier that prevents the redirect-->
     </div>
     <script src="app.js"></script>
 </body>
